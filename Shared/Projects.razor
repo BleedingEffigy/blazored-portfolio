@@ -1,0 +1,44 @@
+﻿<h3>Projects</h3>
+    <div>
+      <div className='card' key=@key @onClick="SetVisible(@title)">
+        <div className='card-image'>
+          <figure className=@photoDimension>
+            <img src=@photoLink>
+          </figure>
+        </div>
+        <div className='card-content'>
+          <div className='content'>
+           @description 
+          </div>
+        </div>
+        <div className='card-footer'>
+          <div className='card-footer-item'>
+            <p><mark className='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
+          </div>
+          <a href=@siteLink className='card-footer-item'>
+            <span class="icon has-text-primary">
+              <i class="fas fa-external-link-alt fas"></i>
+            </span>
+          </a>
+          <a href=@sourceLink className='card-footer-item'>
+            <span class="icon has-text-primary">
+              <i class="fas fa-file-code fas"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+@code {
+    private string description;
+    private string sourceLink;
+    private string siteLink;
+    private string photoLink; 
+    private int key;
+    private string title;
+    private string photoDimension;
+    private void SetVisible()
+    {
+
+    }
+}

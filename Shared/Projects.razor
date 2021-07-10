@@ -1,26 +1,26 @@
 ﻿<h3>Projects</h3>
     <div>
-      <div className='card' key=@key @onClick="SetVisible(@title)">
-        <div className='card-image'>
-          <figure className=@photoDimension>
+      <div class='card' key=@key @onclick="() => SetVisible(title)">
+        <div class='card-image'>
+          <figure class=@photoDimension>
             <img src=@photoLink>
           </figure>
         </div>
-        <div className='card-content'>
-          <div className='content'>
+        <div class='card-content'>
+          <div class='content'>
            @description 
           </div>
         </div>
-        <div className='card-footer'>
-          <div className='card-footer-item'>
-            <p><mark className='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
+        <div class='card-footer'>
+          <div class='card-footer-item'>
+            <p><mark class='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
           </div>
-          <a href=@siteLink className='card-footer-item'>
+          <a href=@siteLink class='card-footer-item'>
             <span class="icon has-text-primary">
               <i class="fas fa-external-link-alt fas"></i>
             </span>
           </a>
-          <a href=@sourceLink className='card-footer-item'>
+          <a href=@sourceLink class='card-footer-item'>
             <span class="icon has-text-primary">
               <i class="fas fa-file-code fas"></i>
             </span>
@@ -30,14 +30,17 @@
     </div>
 
 @code {
-    private string description;
-    private string sourceLink;
-    private string siteLink;
-    private string photoLink; 
-    private int key;
-    private string title;
-    private string photoDimension;
-    private void SetVisible()
+    private string description = @"This site is a pwa that routinely compiles crypto market data,
+        and performs analysis in an attempt to identify buy and sell signals. The react app
+        makes rate-limited api calls to an express route, which retrieves, computes, and stores the data
+        in a redis instance. The server regularly pulls new data and prunes old data.";
+    private string sourceLink = "";
+    private string siteLink = "https://www.ahernandez.dev/trade/" ;
+    private string photoLink = "/img/Aguas_Crypto_Homepage.png"; 
+    private int key = 5;
+    private string title = "¡Aguas! Crypto";
+    private string photoDimension = "is-2by1";
+    private void SetVisible(string title)
     {
 
     }

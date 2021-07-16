@@ -1,0 +1,50 @@
+﻿<h3>Projects</h3>
+    <div>
+      <div class='card' key="5">
+        <div class='card-image'>
+          <figure class=@photoDimension>
+            <img src=@photoLink>
+          </figure>
+        </div>
+        <div class='card-content'>
+          <div class='content'>
+           @description 
+          </div>
+        </div>
+        <div class='card-footer'>
+          <div class='card-footer-item'>
+            <p><mark class='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
+          </div>
+          <a href=@siteLink class='card-footer-item'>
+            <span class="icon has-text-primary">
+              <i class="fas fa-external-link-alt fas"></i>
+            </span>
+          </a>
+          <a href=@sourceLink class='card-footer-item'>
+            <span class="icon has-text-primary">
+              <i class="fas fa-file-code fas"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+@code {
+      [Parameter]
+       public string description {get; set;} = @"This site is a pwa that routinely compiles crypto market data,
+        and performs analysis in an attempt to identify buy and sell signals. The react app
+        makes rate-limited api calls to an express route, which retrieves, computes, and stores the data
+        in a redis instance. The server regularly pulls new data and prunes old data.";
+      [Parameter]
+       public string photoLink {get; set;} = "/img/Aguas_Crypto_Homepage.png";
+      [Parameter]
+       public string photoDimension {get; set;} = "is-2by1";
+      [Parameter]
+       public string title {get; set;} = "¡Aguas! Crypto";
+      [Parameter]
+       public string sourceLink {get; set;} = "";
+      [Parameter]
+       public string siteLink {get; set;} = "https://www.ahernandez.dev/trade/";
+      [Parameter]
+       public bool visible {get; set;}
+}

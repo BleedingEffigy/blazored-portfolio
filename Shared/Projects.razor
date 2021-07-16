@@ -1,47 +1,91 @@
-﻿<h3>Projects</h3>
-    <div>
-      <div class='card' key=@key @onclick="() => SetVisible(title)">
-        <div class='card-image'>
-          <figure class=@photoDimension>
-            <img src=@photoLink>
-          </figure>
-        </div>
-        <div class='card-content'>
-          <div class='content'>
-           @description 
-          </div>
-        </div>
-        <div class='card-footer'>
-          <div class='card-footer-item'>
-            <p><mark class='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
-          </div>
-          <a href=@siteLink class='card-footer-item'>
-            <span class="icon has-text-primary">
-              <i class="fas fa-external-link-alt fas"></i>
-            </span>
-          </a>
-          <a href=@sourceLink class='card-footer-item'>
-            <span class="icon has-text-primary">
-              <i class="fas fa-file-code fas"></i>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
+﻿
+<div>
+  @foreach (var projectItem in ProjectList)
+  {
+    <Project description=@projectItem.description
+             
+    />
+  }
+  
+</div>
 
 @code {
-    private string description = @"This site is a pwa that routinely compiles crypto market data,
+  private List<ProjectBase> ProjectList = new List<ProjectBase>()
+  {
+    new ProjectBase
+    { 
+      title = "SFV Candle Shop",
+      photoLink = "/img/sfv_candles_home.png",
+      photoDimension = "is-2by1",
+      description = @"This is a site I made for my mom to sell her candles. In her free time she
+        likes to make candles. Since she started getting an extra day off work, she
+        expressed a desire to start selling her candles to generate extra income. So for mothers
+        day I made this site for her to realize her desire. The site still has to be
+        connected to paypals api to process payments, once my mother is ready to take the
+        step forward. Currently hosted on netlify",
+      madeWith = new string[] {"Gatsby", "Redux"},
+      siteLink = "https://sfv-candles.netlify.app/",
+      sourceLink= "https://github.com/BleedingEffigy/sfv_candle_shop",
+    },
+    new ProjectBase
+    {
+      title = "¡Aguas! Crypto",
+      photoLink = "/img/Aguas_Crypto_Homepage.png",
+      photoDimension = "is-2by1",
+      description = @"This site is a pwa that routinely compiles crypto market data,
         and performs analysis in an attempt to identify buy and sell signals. The react app
         makes rate-limited api calls to an express route, which retrieves, computes, and stores the data
-        in a redis instance. The server regularly pulls new data and prunes old data.";
-    private string sourceLink = "";
-    private string siteLink = "https://www.ahernandez.dev/trade/" ;
-    private string photoLink = "/img/Aguas_Crypto_Homepage.png"; 
-    private int key = 5;
-    private string title = "¡Aguas! Crypto";
-    private string photoDimension = "is-2by1";
-    private void SetVisible(string title)
+        in a redis instance. The server regularly pulls new data and prunes old data.",
+      madeWith = new string[] {"React", "Redis", "Express.js"},
+      siteLink= "https://www.ahernandez.dev/trade/",
+      sourceLink = "https://glitch.com/edit/#!/us-deaths-overview"
+    },
+    new ProjectBase
     {
-
-    }
+      title = "Navy DEP Blog",
+      photoLink = "/img/Navy_DEP_Blog_screengrab.png",
+      photoDimension = "is-3by2",
+      description = @"This is a blog for my brother I had made using django. He is entering the US
+        Navy and wanted a way to document his experiences. This blog is hosted on the same domain as
+        this portfolio, and allowed me not only an oppurtunity to work with django, python, and postgresql,
+        but also with nginx and how to serve two apps written in different languages under the same domain.",
+      madeWith = new string[] {"Django", "Postgresql"},
+      sourceLink = "https://github.com/BleedingEffigy/navy-blog",
+      siteLink = "https://www.ahernandez.dev/navyblog/"
+    },
+    new ProjectBase
+    {
+      title = "Puppy Shop",
+      photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FSFV-Chow-%20Front-Page.png?v=1561529442317",
+      photoDimension = "is-2by1",
+      description = "This website I had built for my parents whose two dogs recently had a litter of puppies.",
+      madeWith = new string[] {"React", "Express"},
+      sourceLink = "https://glitch.com/edit/#!/chow-chow-shop",
+      siteLink = "https://chow-chow-shop.glitch.me/"
+    },
+    new ProjectBase
+    {
+      title = "Ether Gift Card",
+      photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2Fether_card_pending_filtered.png?v=1561839914720",
+      photoDimension = "is-2by1",
+      description = @"This is app is a gift card deployed on Ethereum. It holds Ether
+       that I sent to it, and the intended recipient (in this case my mom) needs to answer (personalized) security questions to withdraw the held ether
+      into her address (which I had also secured for her).",
+      madeWith = new string[] {"React", "Truffle.js", "Ethereum"},
+      sourceLink = "https://glitch.com/edit/#!/ether-gift-card",
+      siteLink = "https://ether-gift-card.glitch.me",
+      smartContract = "https://github.com/BleedingEffigy/truffle-gift/blob/master/contracts/EtherGift.sol"
+    },
+    new ProjectBase
+    {
+      title = "US Deaths Project",
+      photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FUS_Death_Project.png?v=1568109985898",
+      photoDimension = "is-2by1",
+      description = @"This website I had made from open data that was compiled on reddit. It uses Sqlite on the backend to serve data through an http-api,
+         which the frontend sources to create a responsive table. Formatting the table data is currently a work in progress.",
+      madeWith = new string[] {"React", "SqLite"},
+      sourceLink = "https://glitch.com/edit/#!/us-deaths-overview",
+      siteLink = "https://us-deaths-overview.glitch.me/"
+    },
+  };
 }

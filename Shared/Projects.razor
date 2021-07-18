@@ -1,10 +1,18 @@
 ﻿
-<div>
+<div class='columns is-multiline'>
   @foreach (var projectItem in ProjectList)
   {
-    <Project description=@projectItem.description
-             
-    />
+    <div class='column is-one-third'>
+      <Project description=@projectItem.description
+               title=@projectItem.title
+               photoLink=@projectItem.photoLink
+               photoDimension=@projectItem.photoDimension
+               madeWith=@projectItem.madeWith
+               sourceLink=@projectItem.sourceLink
+               siteLink=@projectItem.siteLink
+                
+      />
+    </div>
   }
   
 </div>
@@ -24,8 +32,8 @@
         connected to paypals api to process payments, once my mother is ready to take the
         step forward. Currently hosted on netlify",
       madeWith = new string[] {"Gatsby", "Redux"},
-      siteLink = "https://sfv-candles.netlify.app/",
-      sourceLink= "https://github.com/BleedingEffigy/sfv_candle_shop",
+      sourceLink = "https://sfv-candles.netlify.app/",
+      siteLink = "https://github.com/BleedingEffigy/sfv_candle_shop",
     },
     new ProjectBase
     {
@@ -37,8 +45,8 @@
         makes rate-limited api calls to an express route, which retrieves, computes, and stores the data
         in a redis instance. The server regularly pulls new data and prunes old data.",
       madeWith = new string[] {"React", "Redis", "Express.js"},
-      siteLink= "https://www.ahernandez.dev/trade/",
-      sourceLink = "https://glitch.com/edit/#!/us-deaths-overview"
+      sourceLink = "https://www.ahernandez.dev/trade/",
+      siteLink = "https://glitch.com/edit/#!/us-deaths-overview"
     },
     new ProjectBase
     {
@@ -83,7 +91,7 @@
       photoDimension = "is-2by1",
       description = @"This website I had made from open data that was compiled on reddit. It uses Sqlite on the backend to serve data through an http-api,
          which the frontend sources to create a responsive table. Formatting the table data is currently a work in progress.",
-      madeWith = new string[] {"React", "SqLite"},
+      madeWith = new string[] {"React", "Sqlite"},
       sourceLink = "https://glitch.com/edit/#!/us-deaths-overview",
       siteLink = "https://us-deaths-overview.glitch.me/"
     },

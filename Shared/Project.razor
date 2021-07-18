@@ -1,5 +1,4 @@
-﻿<h3>Projects</h3>
-    <div>
+﻿    <div>
       <div class='card' key="5">
         <div class='card-image'>
           <figure class=@photoDimension>
@@ -13,7 +12,7 @@
         </div>
         <div class='card-footer'>
           <div class='card-footer-item'>
-            <p><mark class='has-background-primary'>{props.project.madeWith.join(',')}</mark></p>
+            <p><mark class='has-background-primary'>@string.Join(",", madeWith) </mark></p>
           </div>
           <a href=@siteLink class='card-footer-item'>
             <span class="icon has-text-primary">
@@ -45,6 +44,8 @@
        public string sourceLink {get; set;} = "";
       [Parameter]
        public string siteLink {get; set;} = "https://www.ahernandez.dev/trade/";
+       [Parameter]
+       public string[] madeWith {get; set;}
       [Parameter]
        public bool visible {get; set;}
 }

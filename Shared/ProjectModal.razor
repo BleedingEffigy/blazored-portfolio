@@ -1,0 +1,21 @@
+﻿<div class=@(modalProject is null ? "modal" : "modal is-active")>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <section class="modal-card-body">
+
+        </section>
+    </div>
+    <button class="modal-close is-large" @onclick="() => selectProject(null)" aria-label="close"></button>
+</div>
+    <Projects SelectProject="@selectProject"/>
+
+@code {
+    public bool isVisible = false;
+    public ProjectBase modalProject;
+    public string activeProject;
+    public void selectProject(ProjectBase ProjectInfo = null)
+    {
+        modalProject = ProjectInfo is null ? null : ProjectInfo;
+        StateHasChanged();
+    }
+}

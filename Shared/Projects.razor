@@ -26,6 +26,8 @@
       title = "SFV Candle Shop",
       photoLink = "/img/sfv_candles_home.png",
       photoDimension = "is-2by1",
+      photoStructure = "8 2by1 /img/sfv_candles_home.png,4 2by1 /img/sfv_candles_shop.png 4 2by1 /img/sfv_candles_cart.png",
+      ImgStructure = new[]{new ImageTag(8, "2by1", "/img/sfv_candles_home.png"), new ImageTag(4, "2by1", "/img/sfv_candles_shop.png"), new ImageTag(4, "2by1", "/img/sfv_candles_cart.png")},
       description = @"This is a site I made for my mom to sell her candles. In her free time she
         likes to make candles. Since she started getting an extra day off work, she
         expressed a desire to start selling her candles to generate extra income. So for mothers
@@ -33,27 +35,29 @@
         connected to paypals api to process payments, once my mother is ready to take the
         step forward. Currently hosted on netlify",
       madeWith = new string[] {"Gatsby", "Redux"},
-      sourceLink = "https://sfv-candles.netlify.app/",
-      siteLink = "https://github.com/BleedingEffigy/sfv_candle_shop",
+      siteLink = "https://sfv-candles.netlify.app/",
+      sourceLink = "https://github.com/BleedingEffigy/sfv_candle_shop",
     },
     new ProjectBase
     {
       title = "¡Aguas! Crypto",
       photoLink = "/img/Aguas_Crypto_Homepage.png",
       photoDimension = "is-2by1",
+      ImgStructure = new[]{new ImageTag(8, "2by1", "/img/Aguas_Crypto_Homepage.png"), new ImageTag(4, "3by4", "/img/Aguas_Crypto_Alerts.png"), new ImageTag(4, "3by4", "/img/Aguas_Crypto_Mobile_View.png")},
       description = @"This site is a pwa that routinely compiles crypto market data,
         and performs analysis in an attempt to identify buy and sell signals. The react app
         makes rate-limited api calls to an express route, which retrieves, computes, and stores the data
         in a redis instance. The server regularly pulls new data and prunes old data.",
       madeWith = new string[] {"React", "Redis", "Express.js"},
-      sourceLink = "https://www.ahernandez.dev/trade/",
-      siteLink = "https://glitch.com/edit/#!/us-deaths-overview"
+      siteLink = "https://www.ahernandez.dev/trade/",
+      sourceLink = "https://glitch.com/edit/#!/us-deaths-overview"
     },
     new ProjectBase
     {
       title = "Navy DEP Blog",
       photoLink = "/img/Navy_DEP_Blog_screengrab.png",
       photoDimension = "is-3by2",
+      ImgStructure = new []{new ImageTag(6, "3by2", "/img/Navy_DEP_Blog_screengrab.png")},
       description = @"This is a blog for my brother I had made using django. He is entering the US
         Navy and wanted a way to document his experiences. This blog is hosted on the same domain as
         this portfolio, and allowed me not only an oppurtunity to work with django, python, and postgresql,
@@ -67,6 +71,7 @@
       title = "Puppy Shop",
       photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FSFV-Chow-%20Front-Page.png?v=1561529442317",
       photoDimension = "is-2by1",
+      ImgStructure = new []{new ImageTag(5, "2by1", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FSFV-Chow-%20Front-Page.png?v=1561529442317"), new ImageTag(3, "5by4", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FSFV_Chow_Avail_Pups.png?v=1561529445466")},
       description = "This website I had built for my parents whose two dogs recently had a litter of puppies.",
       madeWith = new string[] {"React", "Express"},
       sourceLink = "https://glitch.com/edit/#!/chow-chow-shop",
@@ -77,6 +82,7 @@
       title = "Ether Gift Card",
       photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2Fether_card_pending_filtered.png?v=1561839914720",
       photoDimension = "is-2by1",
+      ImgStructure = new[]{new ImageTag(8, "2by1", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2Fether_card_pending_filtered.png?v=1561839914720"), new ImageTag(4, "3by2", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2Fether_card_success_filtered.png?v=1561839915826"), new ImageTag(4, "3by2", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2Fether_gift_withdraw_filtered.png?v=1561839919604")},
       description = @"This is app is a gift card deployed on Ethereum. It holds Ether
        that I sent to it, and the intended recipient (in this case my mom) needs to answer (personalized) security questions to withdraw the held ether
       into her address (which I had also secured for her).",
@@ -90,6 +96,7 @@
       title = "US Deaths Project",
       photoLink = "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FUS_Death_Project.png?v=1568109985898",
       photoDimension = "is-2by1",
+      ImgStructure = new []{new ImageTag(6, "2by1", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FUS_Death_Project.png?v=1568109985898"), new ImageTag(2, "4by5", "https://cdn.glitch.com/bbddd762-d831-470f-8c95-c27f41782ecb%2FUS_Deaths_Api.png?v=1568110000443")},
       description = @"This website I had made from open data that was compiled on reddit. It uses Sqlite on the backend to serve data through an http-api,
          which the frontend sources to create a responsive table. Formatting the table data is currently a work in progress.",
       madeWith = new string[] {"React", "Sqlite"},

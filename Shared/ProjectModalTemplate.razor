@@ -1,0 +1,45 @@
+﻿@typeparam TItem
+
+    <div>
+        <div>
+            <div class='columns is-centered is-multiline'>
+              @foreach (var item in Items)
+              {
+                  <div>@ProjectImageStructure(item)</div>
+              }
+            </div>
+        </div>
+        <div class='columns is-centered'>
+          <div class='column is-8'>
+            @ProjectDescription 
+          </div>
+        </div>
+      <div class='columns is-centered'>
+        <div class='column is-8'>
+          <div class='level'>
+            <div class='level-left'>
+              <div class='level-item'>
+                  @ProjectMadeWith
+              </div>
+            </div>
+            <div class='level-right'>
+              <div class='level-item'>
+                  @ProjectSiteLink
+                  @ProjectSourceLink
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+@code {
+ [Parameter] public RenderFragment ProjectImage {get; set; }
+ [Parameter] public RenderFragment ProjectDescription {get; set; }
+ [Parameter] public RenderFragment ProjectMadeWith {get; set; }
+ [Parameter] public RenderFragment ProjectSiteLink {get; set; }
+ [Parameter] public RenderFragment ProjectSourceLink {get; set; }
+ [Parameter] public RenderFragment<TItem> ProjectImageStructure {get; set; }
+ [Parameter] public IReadOnlyList<TItem> Items {get; set; }
+
+}
+

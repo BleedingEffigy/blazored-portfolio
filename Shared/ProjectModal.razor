@@ -1,8 +1,37 @@
 ﻿<div class=@(modalProject is null ? "modal" : "modal is-active")>
-    <div class="modal-background"></div>
+    <div class="modal-background" @onclick="()=> selectProject(null)"></div>
     <div class="modal-card">
         <section class="modal-card-body">
-
+            
+    <div>
+    <ProjectModalTemplate Items=@(modalProject is null ? new ImageTag[]{} : modalProject.ImgStructure)>
+        <ProjectImageStructure Context="img">
+                <div class='column is-@img.size'>
+                    <figure class='image is-@img.imgRatio'><img src="@img.imgUrl"></figure>
+                </div>
+        </ProjectImageStructure>
+        <ProjectDescription>
+                <p>@modalProject?.description</p>
+        </ProjectDescription>
+        <ProjectMadeWith>
+                <p>Made with <mark class='has-background-primary'>@string.Join(",", modalProject?.madeWith??new string[0]) </mark></p>
+        </ProjectMadeWith>
+        <ProjectSiteLink>
+            <a href=@modalProject?.siteLink>
+                <span class="icon is-medium">
+                <i class="fas fa-external-link-alt fa-2x"></i>
+                </span>
+            </a>
+        </ProjectSiteLink>
+        <ProjectSourceLink>
+            <a href=@modalProject?.sourceLink>
+                <span class="icon is-medium">
+                <i class="fas fa-file-code fa-2x"></i>
+                </span>
+            </a>
+        </ProjectSourceLink>
+    </ProjectModalTemplate>
+    </div>
         </section>
     </div>
     <button class="modal-close is-large" @onclick="() => selectProject(null)" aria-label="close"></button>

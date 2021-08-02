@@ -1,4 +1,4 @@
-﻿<h3>HomeBanner</h3>
+﻿@inject NavigationManager NavigationManager
     <section class="hero is-fullheight">
       <div class='hero-head'>
       </div>
@@ -14,7 +14,7 @@
             <div class='column is-offset-2'>
               <p class='is-size-5'>Have a look at my
                 <a class='button is-primary is-inverted is-outlined ml-3'
-                  href='/resume'>
+                @onclick="NavigateToResumeComponent">
                   <span class='icon mr-1'>
                     <i class="fas fa-book"></i>
                   </span>
@@ -43,4 +43,8 @@
 
 @code {
 
+private void NavigateToResumeComponent()
+  {
+    NavigationManager.NavigateTo("resume");
+  }
 }

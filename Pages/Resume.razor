@@ -1,0 +1,84 @@
+﻿@page "/resume"
+@inject NavigationManager NavigationManager
+
+    <div>
+    <a class='button is-large' @onclick="NavigateToIndexComponent">
+      <span class='icon is-large mr-1'>
+        <i class="fas fa-chevron-left"></i>
+      </span>
+      Back
+    </a>
+      <div class='columns is-centered'>
+        <div class='column is-8'>
+          <div class='tile is-ancestor'>
+            <div class='tile is-vertical is-4 is-parent'>
+              <div class='tile is-child content'>
+                <p class='title'>Skills</p>
+              <div class='tags'>
+                @foreach (var skill in SkillsArray)
+                {
+                    <div class='tag is-medium'>@skill</div>
+                }
+              </div>
+              </div>
+              <div class='tile is-child content'>
+                <p class='title'>Tools</p>
+              <div class='tags'>
+                @foreach (var tool in ToolsArray)
+                {
+                    <div class='tag is-medium' >@tool</div>
+                }
+              </div>
+              </div>
+            </div>
+            <div class='tile is-vertical is-parent'>
+              <div class='tile is-child content'>
+                <p class='title'>Education</p>
+                <p class='subtitle has-text-weight-semibold'>Santa Barbara City College</p>
+                <p> Sep 2014 - May 2017</p>
+                <p>While attending, I completed the lower-half of classes required for a bachelors in computer engineering, and was
+                  then accepted to transfer to UC Merced to complete my degree. I subsequently took a year-break before transfering, during which I
+                completed the internship and work experiences listed below. A year became two years, and during this time I had come to the decison
+                  that joining the US Navy was a more appropriate step to take next in my life.</p>
+              </div>
+              <div class='tile is-child content'>
+                <p class='title'>Work Experience</p>
+                <p class='subtitle has-text-weight-semibold'>Smithsonian Conservation of Biology Institute</p>
+                <p> Jul 2017 - Aug 2017</p>
+                <p>During a two-week internship, I had the opportunity to observe various animals held in and around the SCBI, ranging from insects to
+                mammals, bats,  birds and amphibians. During the first week, I learned to use radio signaling and UTM (Universal Transverse Mercator) coordinates to triangulate
+                tagged animals, along with a rudimentary understanding of PCR analysis to assist in DNA extraction from scat samples to identify the species that
+                left it. In the second week, I shadowed two local educators in their daily tasks, which included preparing insect specimens for cataloging, and
+                attending to the institutions apiary, which included an in-depth lesson on pollinators and their effect on the ecosystem.</p>
+                <p class='subtitle has-text-weight-semibold'>Santa Barbara Museum of Natural History</p>
+                <p> May 2018 - Aug 2018</p>
+                <p>I was contracted by the National Science Foundation to assist with the Channel Islands Bird Data Digitizing Project. This project
+                entailed inputting hand written records of bird sightings, from decades ago to present day, recorded at 5 of the 8 Channel Islands.
+                This data was then used to plot migration patterns of the multitude of species that annually pass by the Channel Islands.</p>
+              </div>
+              <div class='tile is-child content'>
+                <p class='title'>Volunteer Experience</p>
+                <p class='subtitle has-text-weight-semibold'>Volunteer Leadership</p>
+                <p> Aug 2014 - Dec 2017</p>
+                <p>Served as an officer of the board in SBCC's local chapter of SACNAS (Society for the Advancement of Chicanos and Native Americans
+                in Science), initially as the Webmaster and then as the President.</p>
+                <p>The mission statement of SACNAS is a dedication to foster the success of groups that have been traditionally underrepresented in STEM
+                  (Science, Technology, Engineering, and Mathematics) fields, and to attain advanced degrees, careers, and positions of leadership in STEM, so
+                  our country may live up to it's potential.
+                  Serving on the board of SACNAS ingrained in me a desire to encourage others to surmount seemingly daunting tasks, despite their race, gender,
+                or economic background.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+@code {
+    private string[] SkillsArray = new string[]{"Clojure", "React", "Gatsby", "Redux", "ES6", "HTML", "CSS", "Sass", "Bulma", "Java", "C", "Django"};
+    private string[] ToolsArray = new string[]{"Linux", "Zsh", "Git", "Spacemacs", "DigitalOcean", "Yarn", "Leiningen", "Tmux", "SQLite", "Postgresql", "Nginx", "Pm2", "Gunicorn", "Netlify"};
+    private void NavigateToIndexComponent()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}

@@ -6,12 +6,12 @@
     <div>
     <ProjectModalTemplate Items=@(modalProject is null ? new ImageTag[]{} : modalProject.ImgStructure)>
         <ProjectImageStructure Context="img">
-                <div class='column is-@img.size'>
-                    <figure class='image is-@img.imgRatio'><img src="@img.imgUrl"></figure>
-                </div>
+            <div class='column is-@img.size'>
+                <figure class='image is-@img.imgRatio'><img src="@img.imgUrl"></figure>
+            </div>
         </ProjectImageStructure>
         <ProjectDescription>
-                <p>@modalProject?.description</p>
+            <p>@modalProject?.description</p>
         </ProjectDescription>
         <ProjectMadeWith>
                 <p>Made with <mark class='has-background-primary'>@string.Join(",", modalProject?.madeWith??new string[0]) </mark></p>

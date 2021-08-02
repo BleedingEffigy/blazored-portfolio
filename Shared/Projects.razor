@@ -1,5 +1,5 @@
 ﻿
-<div class='columns is-multiline'>
+<div class='columns is-multiline px-4' id='projects'>
   @foreach (var projectItem in ProjectList)
   {
     <div class="column is-one-third" @onclick = "@(_ => SelectProject(projectItem))">
@@ -26,7 +26,7 @@
       title = "SFV Candle Shop",
       photoLink = "/img/sfv_candles_home.png",
       photoDimension = "is-2by1",
-      photoStructure = "8 2by1 /img/sfv_candles_home.png,4 2by1 /img/sfv_candles_shop.png 4 2by1 /img/sfv_candles_cart.png",
+      photoStructure = "12 2by1 /img/sfv_candles_home.png,6 2by1 /img/sfv_candles_shop.png 6 2by1 /img/sfv_candles_cart.png",
       ImgStructure = new[]{new ImageTag(8, "2by1", "/img/sfv_candles_home.png"), new ImageTag(4, "2by1", "/img/sfv_candles_shop.png"), new ImageTag(4, "2by1", "/img/sfv_candles_cart.png")},
       description = @"This is a site I made for my mom to sell her candles. In her free time she
         likes to make candles. Since she started getting an extra day off work, she

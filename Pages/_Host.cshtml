@@ -15,6 +15,18 @@
     <link href="BlazoredPortfolio.styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/App.css">
     <script src="https://kit.fontawesome.com/4ea44914ae.js"></script>
+<script>
+    function BlazorScrollToId(id) {
+        const element = document.getElementById(id);
+        if (element instanceof HTMLElement) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest"
+            });
+        }
+    }
+</script>
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />

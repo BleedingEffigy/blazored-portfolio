@@ -52,7 +52,6 @@ namespace BlazoredPortfolio
             });
             app.UseAuthentication();
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

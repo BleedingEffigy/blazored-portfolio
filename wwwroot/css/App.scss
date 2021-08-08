@@ -1,22 +1,22 @@
 @charset "utf-8";
 
 // If need, change your variables before importing Bulma
-$title-color: #ff0000;
+//$title-color: #ff0000;
 // import the two below to work with bulmas initial variables and functions
-@import "bulma/bulma/sass/utilities/initial-variables";
-@import "bulma/bulma/sass/utilities/functions";
-$primary: #BEA279;
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+$primary: #f4bebd; 
 //harmonized white and grays below
-$white: #ECE3D7;
-$grey: #80786C;
-$grey-dark: #52493D;
+$white: #FBEBEA;
+$grey: #918080;
+$grey-dark: #625251;
 
 $family-sans-serif: "open sans";
 $family-primary: $family-sans-serif;
 
 
 //import the bottom to alter the $colors map
-@import "bulma/bulma/sass/utilities/derived-variables";
+@import "bulma/sass/utilities/derived-variables";
 
 $plum: #8881b6;
 $plum-invert: findColorInvert($plum);
@@ -42,7 +42,8 @@ $colors: map-merge($colors, $addColors);
 // @import "~bulma/sass/utilities/_all.sass";
 
 body{
-  background: linear-gradient(to right top, #bea279, #8881b6);
+  // background: linear-gradient(to right top, #bea279, #8881b6);
+  background-image: linear-gradient(to top, #d5dee7 0%, #ffafbd 0%, #c9ffbf 100%);
 }
 
 html{

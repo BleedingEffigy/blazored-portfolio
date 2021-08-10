@@ -3,8 +3,8 @@
 // If need, change your variables before importing Bulma
 //$title-color: #ff0000;
 // import the two below to work with bulmas initial variables and functions
-@import "bulma/sass/utilities/initial-variables";
-@import "bulma/sass/utilities/functions";
+@import "/home/phantomhaze/Workspace/git/bulma/sass/utilities/initial-variables";
+@import "/home/phantomhaze/Workspace/git/bulma/sass/utilities/functions";
 $primary: #f4bebd; 
 //harmonized white and grays below
 $white: #FBEBEA;
@@ -16,7 +16,7 @@ $family-primary: $family-sans-serif;
 
 
 //import the bottom to alter the $colors map
-@import "bulma/sass/utilities/derived-variables";
+@import "/home/phantomhaze/Workspace/git/bulma/sass/utilities/derived-variables";
 
 $plum: #8881b6;
 $plum-invert: findColorInvert($plum);
@@ -25,7 +25,7 @@ $addColors: (
 );
 $colors: map-merge($colors, $addColors);
 
-@import "bulma/bulma.sass";
+@import "/home/phantomhaze/Workspace/git/bulma/bulma.sass";
 // @import "~bulma/sass/base/_all.sass";
 // @import "~bulma/sass/components/card.sass";
 // @import "~bulma/sass/components/level.sass";
